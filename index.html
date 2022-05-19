@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html>
 
-<body onload="formChanged()">
+<body onload="formChanged()" style="background-color: black">
 
-  <input type="color" name="firstcolour" onkeyup="formChanged()" onchange="formChanged()" value="#f87119" style="width:100%" />
+  <input type="color" name="firstcolour" onkeyup="formChanged()" onchange="formChanged()" value="#FF9F00" style="width:100%; border: none; padding: 0; background-color: black" />
   <div id="colourMap"></div>
-  <input type="color" name="secondcolour" onkeyup="formChanged()" onchange="formChanged()" value="#3d7ebc" style="width:100%" />
+  <input type="color" name="secondcolour" onkeyup="formChanged()" onchange="formChanged()" value="#37008a" style="width:100%; border: none; padding: 0; background-color: black" />
 
-  <p style="margin: 7px 0">Middle Colour</p>
-  <input type="color" name="middlecolour" onkeyup="formChanged()" onchange="formChanged()" value="#ffffff" style="width:100%" />
+  <p style="margin: 7px 0;">Middle Colour</p>
+  <input type="color" name="middlecolour" onkeyup="formChanged()" onchange="formChanged()" value="#BD0000" style="width:100%; border: none; padding: 0; background-color: black" />
 
 </body>
 
 <script src="myscripts.js"></script>
-
+<style>p {mix-blend-mode: difference; filter: invert(1);}</style>
 </html>

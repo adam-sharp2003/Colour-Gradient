@@ -39,6 +39,7 @@ function formChanged() {
     document.getElementById(textBoxes[l]).style.backgroundColor = getColour(l / 10);
     document.getElementById(textBoxes[l]).style.margin = 0;
     document.getElementById(textBoxes[l]).style.fontSize = "7px";
+    document.getElementById(textBoxes[l]).style.color = "white";
 
   }
 }
