@@ -2,7 +2,7 @@ var a, c;
 
 function formChanged() {
   document.getElementById("colourMap").innerHTML = '';
-  const getColor = (n) => {
+  const getColour = (n) => {
     function hexToRgb(hex) {
       var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
       return result ? {
@@ -36,7 +36,7 @@ function formChanged() {
     para.setAttribute("id", "colour" + l);
     element.appendChild(para);
     textBoxes.push("colour" + l)
-    document.getElementById(textBoxes[l]).style.backgroundColor = getColor(l / 10);
+    document.getElementById(textBoxes[l]).style.backgroundColor = getColour(l / 10);
     document.getElementById(textBoxes[l]).style.margin = 0;
     document.getElementById(textBoxes[l]).style.fontSize = "7px";
 
