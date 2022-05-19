@@ -12,4 +12,4 @@ This project is a HTML Colour Tester, where the user selects the desired colours
 
 ![image](https://user-images.githubusercontent.com/79047247/169323948-a62ec2d8-12fd-4ba6-952b-d81c1013130a.png)
 
-![Screenshot 2022-05-19 at 15 24 19](https://user-images.githubusercontent.com/79047247/169318410-82b5263c-ad1e-44a0-8016-0a1a2cbfc80f.png)
+![image](https://user-images.githubusercontent.com/79047247/169324438-7c3067cb-cb7d-4ee7-92fc-9c93f2b93ca1.png)
