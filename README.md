@@ -4,8 +4,8 @@ A client had a system on there website where a table would display numbers from 
 
 - convert the two hexcodes to rgb 
 - create a list which would hold
-  - a list of 50 colours between the first colour and white
-  - a list of 50 colours between white and the second colour
+  - 50 generated colours between the first colour and white
+  - 50 generated colours between white and the second colour
  - convert the colours back to hexcodes to be selected by the number * 10 (e.g if the number is 7.9 it would select the 79th colour) and return the hexcode
 
 This project is a HTML Colour Tester, where the user selects the desired colours and program outputs a gradient of divs using the above system.
