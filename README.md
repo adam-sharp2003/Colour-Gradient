@@ -10,6 +10,6 @@ A client had a system on there website where a table would display numbers from 
 
 This project is a HTML Colour Tester, where the user selects the desired colours and program outputs a gradient of divs using the above system.
 
-![image](https://user-images.githubusercontent.com/79047247/169323545-097c7284-ff51-4b73-b751-d1ba83fbdbb3.png)
+![image](https://user-images.githubusercontent.com/79047247/169323948-a62ec2d8-12fd-4ba6-952b-d81c1013130a.png)
 
 ![Screenshot 2022-05-19 at 15 24 19](https://user-images.githubusercontent.com/79047247/169318410-82b5263c-ad1e-44a0-8016-0a1a2cbfc80f.png)
