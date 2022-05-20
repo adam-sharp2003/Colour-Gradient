@@ -3,16 +3,14 @@
 
 <body onload="formChanged()" style="background-color: black; padding: 0 10%">
 
-
   <input type="color" name="firstcolour" onkeyup="formChanged()" onchange="formChanged()" value="#FF9F00" style="width:100%; border: none; padding: 0; background-color: black" />
   <div id="colourMap"></div>
   <input type="color" name="secondcolour" onkeyup="formChanged()" onchange="formChanged()" value="#37008a" style="width:100%; border: none; padding: 0; background-color: black" />
-
   <p>Middle Colour</p>
   <input type="color" name="middlecolour" onkeyup="formChanged()" onchange="formChanged()" value="#BD0000" style="width:100%; border: none; padding: 0; background-color: black" />
   <input type="range" min="0" max="50" value="25" oninput="formChanged()" id="myRange" style="width:100%; display: inline-block;">
   <p>Max Number</p>
-  <input type="text" value="5" onchange="formChanged()" id="colourCount" style="width:100%; display: inline-block;">
+  <input type="text" value="5" onkeyup="formChanged()" onchange="formChanged()" id="colourCount" style="width:100%; display: inline-block;">
 </body>
 
 <script src="myscripts.js"></script>
