@@ -17,14 +17,11 @@ function formChanged() {
       [],
       [],
       [],
-      [a.r, a.g, a.b],
-      [c.r, c.g, c.b],
-      [d.r, d.g, d.b],
     ];
     for (let l = 0; l < 3; l += 1)
-      for (let i = rgbList[3][l], j = 0; i <= rgbList[5][l], j < slider; i += (rgbList[5][l] - rgbList[3][l]) / slider, j += 1) rgbList[l].push(i);
+      for (let i = Object.values(a)[l], j = 0; i <= Object.values(d)[l], j < slider; i += (Object.values(d)[l] - Object.values(a)[l]) / slider, j += 1) rgbList[l].push(i);
     for (let l = 0; l < 3; l += 1)
-      for (let i = rgbList[5][l], j = 0; i >= rgbList[4][l], j < ((colourCount * 10 + 1) - slider); i -= (rgbList[5][l] - rgbList[4][l]) / ((colourCount * 10 + 1) - slider), j += 1) rgbList[l].push(i);
+      for (let i = Object.values(d)[l], j = 0; i >= Object.values(c)[l], j < ((colourCount * 10 + 1) - slider); i -= (Object.values(d)[l] - Object.values(c)[l]) / ((colourCount * 10 + 1) - slider), j += 1) rgbList[l].push(i);
     return `#${[rgbList[0][Math.round(n*10)],rgbList[1][Math.round(n*10)],rgbList[2][Math.round(n*10)]].map(n=>Math.round(n).toString(16).padStart(2,0)).join("")}`
   };
 
