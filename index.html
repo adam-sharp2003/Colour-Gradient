@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 
-<body onload="formChanged()" style="background-color: black">
+<body onload="formChanged()" style="background-color: black; padding: 0 10%">
+
 
   <input type="color" name="firstcolour" onkeyup="formChanged()" onchange="formChanged()" value="#FF9F00" style="width:100%; border: none; padding: 0; background-color: black" />
   <div id="colourMap"></div>
@@ -9,9 +10,14 @@
 
   <p style="margin: 7px 0;">Middle Colour</p>
   <input type="color" name="middlecolour" onkeyup="formChanged()" onchange="formChanged()" value="#BD0000" style="width:100%; border: none; padding: 0; background-color: black" />
-
+  <input type="range" min="1" max="100" value="50" class="slider" oninput="formChanged()" id="myRange" style="width:100%; display: inline-block;">
 </body>
 
 <script src="myscripts.js"></script>
-<style>p {mix-blend-mode: difference; filter: invert(1);}</style>
+<style>
+  p {
+    color: white
+  }
+</style>
+
 </html>

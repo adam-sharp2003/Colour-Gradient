@@ -12,18 +12,19 @@ function formChanged() {
     var a = hexToRgb(document.getElementsByName("firstcolour")[0].value) //lower colour (i.e Orange)
     var d = hexToRgb(document.getElementsByName("middlecolour")[0].value)
     var c = hexToRgb(document.getElementsByName("secondcolour")[0].value) //higher colour (i.e Blue)
+    var slider = document.getElementById("myRange").value
     var rgbList = [
       [],
       [],
       [],
       [a.r, a.g, a.b],
       [c.r, c.g, c.b],
-      [d.r, d.g, d.b]
+      [d.r, d.g, d.b],
     ];
     for (let l = 0; l < 3; l += 1)
-      for (let i = rgbList[3][l], j = 0; i <= rgbList[5][l], j < 50; i += (rgbList[5][l] - rgbList[3][l]) / 50, j += 1) rgbList[l].push(i);
+      for (let i = rgbList[3][l], j = 0; i <= rgbList[5][l], j < slider; i += (rgbList[5][l] - rgbList[3][l]) / slider, j += 1) rgbList[l].push(i);
     for (let l = 0; l < 3; l += 1)
-      for (let i = rgbList[5][l], j = 0; i >= rgbList[4][l], j < 51; i -= (rgbList[5][l] - rgbList[4][l]) / 51, j += 1) rgbList[l].push(i);
+      for (let i = rgbList[5][l], j = 0; i >= rgbList[4][l], j < (101-slider); i -= (rgbList[5][l] - rgbList[4][l]) / (101-slider), j += 1) rgbList[l].push(i);
     return `#${[rgbList[0][Math.round(n*10)],rgbList[1][Math.round(n*10)],rgbList[2][Math.round(n*10)]].map(n=>Math.round(n).toString(16).padStart(2,0)).join("")}`
   };
 
@@ -38,8 +39,9 @@ function formChanged() {
     textBoxes.push("colour" + l)
     document.getElementById(textBoxes[l]).style.backgroundColor = getColour(l / 10);
     document.getElementById(textBoxes[l]).style.margin = 0;
-    document.getElementById(textBoxes[l]).style.fontSize = "7px";
+    document.getElementById(textBoxes[l]).style.fontSize = "6px";
     document.getElementById(textBoxes[l]).style.color = "white";
 
   }
+
 }
