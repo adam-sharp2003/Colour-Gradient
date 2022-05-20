@@ -2,18 +2,18 @@ function formChanged() {
   document.getElementById("colourMap").innerHTML = '';
   const getColour = (n) => {
     function hexToRgb(hex) {
-      var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+      let result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
       return result ? {
         r: parseInt(result[1], 16),
         g: parseInt(result[2], 16),
         b: parseInt(result[3], 16)
       } : null;
     }
-    var a = hexToRgb(document.getElementsByName("firstcolour")[0].value) //lower colour (i.e Orange)
-    var d = hexToRgb(document.getElementsByName("middlecolour")[0].value)
-    var c = hexToRgb(document.getElementsByName("secondcolour")[0].value) //higher colour (i.e Blue)
-    var slider = document.getElementById("myRange").value
-    var rgbList = [
+    let a = hexToRgb(document.getElementsByName("firstcolour")[0].value) //lower colour (i.e Orange)
+    let d = hexToRgb(document.getElementsByName("middlecolour")[0].value)
+    let c = hexToRgb(document.getElementsByName("secondcolour")[0].value) //higher colour (i.e Blue)
+    let slider = document.getElementById("myRange").value
+    let rgbList = [
       [],
       [],
       [],
@@ -28,8 +28,8 @@ function formChanged() {
     return `#${[rgbList[0][Math.round(n*10)],rgbList[1][Math.round(n*10)],rgbList[2][Math.round(n*10)]].map(n=>Math.round(n).toString(16).padStart(2,0)).join("")}`
   };
 
-  var textBoxes = []
-  var colourCount = document.getElementById("colourCount").value
+  let textBoxes = []
+  let colourCount = document.getElementById("colourCount").value
   document.getElementById("myRange").max = colourCount * 10;
   for (let l = 0; l <= colourCount * 10; l += 1) {
     const para = document.createElement("div");
