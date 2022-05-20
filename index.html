@@ -8,15 +8,18 @@
   <div id="colourMap"></div>
   <input type="color" name="secondcolour" onkeyup="formChanged()" onchange="formChanged()" value="#37008a" style="width:100%; border: none; padding: 0; background-color: black" />
 
-  <p style="margin: 7px 0;">Middle Colour</p>
+  <p>Middle Colour</p>
   <input type="color" name="middlecolour" onkeyup="formChanged()" onchange="formChanged()" value="#BD0000" style="width:100%; border: none; padding: 0; background-color: black" />
-  <input type="range" min="1" max="100" value="50" class="slider" oninput="formChanged()" id="myRange" style="width:100%; display: inline-block;">
+  <input type="range" min="0" max="50" value="25" oninput="formChanged()" id="myRange" style="width:100%; display: inline-block;">
+  <p>Max Number</p>
+  <input type="text" value="5" onchange="formChanged()" id="colourCount" style="width:100%; display: inline-block;">
 </body>
 
 <script src="myscripts.js"></script>
 <style>
   p {
-    color: white
+    color: white;
+    margin: 7px 0
   }
 </style>
 
