@@ -10,12 +10,18 @@ A client had a system on there website where a table would display numbers from 
 
 This project is a HTML Colour Tester, where the user selects the desired colours and program outputs a gradient of divs using the above system.
 
-## Update
+## Update 20/05/22
+
+You can now adjust position of the middle colour and adjust the max number in the gradient.
+
+DISCLAIMER: I am yet to add a limit to the amount of colours, it will stop displaying after around 75 (750 colours), but it will still use a lot of memory trying make the lists. To be safe, I wouldn't recommend going above that number.
+
+## Update 19/05/22
 
 Now allows control of all three colours
 
-![image](https://user-images.githubusercontent.com/79047247/169344362-79a67fbf-23c8-4c41-b787-c4bd67b18e5e.png)
+![image](https://user-images.githubusercontent.com/79047247/169552238-df16422a-f4f0-4b6a-b137-9b0e6f9da510.png)
 
-![image](https://user-images.githubusercontent.com/79047247/169344576-81262a9f-32d9-4b69-aa73-8046c4216f29.png)
+![image](https://user-images.githubusercontent.com/79047247/169554220-1cf77859-db8a-43d1-983f-cab9c801da25.png)
 
 
