@@ -22,7 +22,9 @@ DISCLAIMER: I am yet to add a limit to the amount of colours, it will stop displ
 
 Now allows control of all three colours
 
-![image](https://user-images.githubusercontent.com/79047247/169552238-df16422a-f4f0-4b6a-b137-9b0e6f9da510.png)
+## Gallery
+
+![image](https://user-images.githubusercontent.com/79047247/169561854-3eea7800-e4b6-4e9f-9054-1d7f6e7267c2.png)
 
 ![image](https://user-images.githubusercontent.com/79047247/169554220-1cf77859-db8a-43d1-983f-cab9c801da25.png)
 
