@@ -24,14 +24,14 @@ function formChanged() {
     for (let l = 0; l < 3; l += 1)
       for (let i = rgbList[3][l], j = 0; i <= rgbList[5][l], j < slider; i += (rgbList[5][l] - rgbList[3][l]) / slider, j += 1) rgbList[l].push(i);
     for (let l = 0; l < 3; l += 1)
-      for (let i = rgbList[5][l], j = 0; i >= rgbList[4][l], j < ((colourCount*10+1)-slider); i -= (rgbList[5][l] - rgbList[4][l]) / ((colourCount*10+1)-slider), j += 1) rgbList[l].push(i);
+      for (let i = rgbList[5][l], j = 0; i >= rgbList[4][l], j < ((colourCount * 10 + 1) - slider); i -= (rgbList[5][l] - rgbList[4][l]) / ((colourCount * 10 + 1) - slider), j += 1) rgbList[l].push(i);
     return `#${[rgbList[0][Math.round(n*10)],rgbList[1][Math.round(n*10)],rgbList[2][Math.round(n*10)]].map(n=>Math.round(n).toString(16).padStart(2,0)).join("")}`
   };
 
   var textBoxes = []
   var colourCount = document.getElementById("colourCount").value
-  document.getElementById("myRange").max = colourCount*10;
-  for (let l = 0; l <= colourCount*10; l += 1) {
+  document.getElementById("myRange").max = colourCount * 10;
+  for (let l = 0; l <= colourCount * 10; l += 1) {
     const para = document.createElement("div");
     const node = document.createTextNode(l / 10);
     const element = document.getElementById("colourMap");
