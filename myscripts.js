@@ -9,9 +9,9 @@ function formChanged() {
         b: parseInt(result[3], 16)
       } : null;
     }
-    let a = hexToRgb(document.getElementsByName("firstcolour")[0].value) //lower colour (i.e Orange)
+    let a = hexToRgb(document.getElementsByName("firstcolour")[0].value)
     let d = hexToRgb(document.getElementsByName("middlecolour")[0].value)
-    let c = hexToRgb(document.getElementsByName("secondcolour")[0].value) //higher colour (i.e Blue)
+    let c = hexToRgb(document.getElementsByName("secondcolour")[0].value)
     let slider = document.getElementById("myRange").value
     let rgbList = [
       [],
@@ -25,22 +25,14 @@ function formChanged() {
     return `#${[rgbList[0][Math.round(n*10)],rgbList[1][Math.round(n*10)],rgbList[2][Math.round(n*10)]].map(n=>Math.round(n).toString(16).padStart(2,0)).join("")}`
   };
 
-  let textBoxes = []
   let colourCount = document.getElementById("colourCount").value
   document.getElementById("myRange").max = colourCount * 10;
   for (let l = 0; l <= colourCount * 10; l += 1) {
     const para = document.createElement("div");
-    const node = document.createTextNode(l / 10);
-    const element = document.getElementById("colourMap");
-    para.appendChild(node);
+    para.appendChild(document.createTextNode(l / 10));
     para.setAttribute("id", "colour" + l);
-    element.appendChild(para);
-    textBoxes.push("colour" + l)
-    document.getElementById(textBoxes[l]).style.backgroundColor = getColour(l / 10);
-    document.getElementById(textBoxes[l]).style.margin = 0;
-    document.getElementById(textBoxes[l]).style.fontSize = `${5/(colourCount/10)}px`;
-    document.getElementById(textBoxes[l]).style.color = "white";
-
+    document.getElementById("colourMap").appendChild(para);
+    document.getElementById("colour" + l).style.cssText = `background-color: ${getColour(l / 10)}; margin: 0; font-size: ${5/(colourCount/10)}px; color: white`;
   }
 
 }
