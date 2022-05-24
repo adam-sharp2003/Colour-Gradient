@@ -9,9 +9,9 @@ function formChanged() {
         parseInt(result[3], 16)
       ] : null;
     }
-    let a = hexToRgb(document.getElementsByName("firstcolour")[0].value)
+    let a = hexToRgb(document.getElementsByName("topColour")[0].value)
     let b = hexToRgb(document.getElementsByName("middlecolour")[0].value)
-    let c = hexToRgb(document.getElementsByName("secondcolour")[0].value)
+    let c = hexToRgb(document.getElementsByName("bottomColour")[0].value)
     let d = document.getElementById("middleLocation").value
     let rgbList = [
       [],
