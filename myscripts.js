@@ -21,18 +21,18 @@ function formChanged() {
     for (let l = 0; l < 3; l += 1)
       for (let i = a[l], j = 0; i <= b[l], j < d; i += (b[l] - a[l]) / d, j += 1) rgbList[l].push(i);
     for (let l = 0; l < 3; l += 1)
-      for (let i = b[l], j = 0; i >= c[l], j < ((colourCount * 10 + 1) - d); i -= (b[l] - c[l]) / ((colourCount * 10 + 1) - d), j += 1) rgbList[l].push(i);
+      for (let i = b[l], j = 0; i >= c[l], j < ((colourCount + 1) - d); i -= (b[l] - c[l]) / ((colourCount + 1) - d), j += 1) rgbList[l].push(i);
     return `#${[rgbList[0][Math.round(n*10)],rgbList[1][Math.round(n*10)],rgbList[2][Math.round(n*10)]].map(n=>Math.round(n).toString(16).padStart(2,0)).join("")}`
   };
 
-  let colourCount = document.getElementById("colourCount").value
-  document.getElementById("middleLocation").max = colourCount * 10;
-  for (let l = 0; l <= colourCount * 10; l += 1) {
+  let colourCount = document.getElementById("colourCount").value *10
+  document.getElementById("middleLocation").max = colourCount;
+  for (let l = 0; l <= colourCount; l += 1) {
     const para = document.createElement("div");
     para.appendChild(document.createTextNode(l / 10));
     para.setAttribute("id", "colour" + l);
     document.getElementById("colourMap").appendChild(para);
-    document.getElementById("colour" + l).style.cssText = `background-color: ${getColour(l / 10)}; margin: 0; font-size: ${5/(colourCount/10)}px; color: white`;
+    document.getElementById("colour" + l).style.cssText = `background-color: ${getColour(l / 10)}; margin: 0; font-size: ${5/(colourCount/100)}px; color: white`;
   }
 
 }
