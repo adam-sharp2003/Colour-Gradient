@@ -10,18 +10,18 @@ function formChanged() {
       ] : null;
     }
     let a = hexToRgb(document.getElementsByName("firstcolour")[0].value)
-    let d = hexToRgb(document.getElementsByName("middlecolour")[0].value)
+    let b = hexToRgb(document.getElementsByName("middlecolour")[0].value)
     let c = hexToRgb(document.getElementsByName("secondcolour")[0].value)
-    let slider = document.getElementById("middleLocation").value
+    let d = document.getElementById("middleLocation").value
     let rgbList = [
       [],
       [],
       [],
     ];
     for (let l = 0; l < 3; l += 1)
-      for (let i = a[l], j = 0; i <= d[l], j < slider; i += (d[l] - a[l]) / slider, j += 1) rgbList[l].push(i);
+      for (let i = a[l], j = 0; i <= b[l], j < d; i += (b[l] - a[l]) / d, j += 1) rgbList[l].push(i);
     for (let l = 0; l < 3; l += 1)
-      for (let i = d[l], j = 0; i >= c[l], j < ((colourCount * 10 + 1) - slider); i -= (d[l] - c[l]) / ((colourCount * 10 + 1) - slider), j += 1) rgbList[l].push(i);
+      for (let i = b[l], j = 0; i >= c[l], j < ((colourCount * 10 + 1) - d); i -= (b[l] - c[l]) / ((colourCount * 10 + 1) - d), j += 1) rgbList[l].push(i);
     return `#${[rgbList[0][Math.round(n*10)],rgbList[1][Math.round(n*10)],rgbList[2][Math.round(n*10)]].map(n=>Math.round(n).toString(16).padStart(2,0)).join("")}`
   };
 
