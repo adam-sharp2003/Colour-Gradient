@@ -21,8 +21,8 @@ function formChanged() {
     for (let l = 0; l < 3; l += 1)
       for (let i = a[l], j = 0; i <= b[l], j < d; i += (b[l] - a[l]) / d, j += 1) rgbList[l].push(i);
     for (let l = 0; l < 3; l += 1)
-      for (let i = b[l], j = 0; i >= c[l], j < ((colourCount + 1) - d); i -= (b[l] - c[l]) / ((colourCount + 1) - d), j += 1) rgbList[l].push(i);
-    return `#${[rgbList[0][Math.round(n*10)],rgbList[1][Math.round(n*10)],rgbList[2][Math.round(n*10)]].map(n=>Math.round(n).toString(16).padStart(2,0)).join("")}`
+      for (let i = b[l], j = 0; i >= c[l], j < (colourCount + 1 - d); i -= (b[l] - c[l]) / (colourCount + 1 - d), j += 1) rgbList[l].push(i);
+    return '#' +[rgbList[0][Math.round(n*10)],rgbList[1][Math.round(n*10)],rgbList[2][Math.round(n*10)]].map(n=>Math.round(n).toString(16).padStart(2,0)).join("")
   };
 
   let colourCount = document.getElementById("colourCount").value *10
