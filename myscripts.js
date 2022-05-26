@@ -13,7 +13,7 @@ function formChanged() {
     let b = hexToRgb(document.getElementsByName("middlecolour")[0].value)
     let c = hexToRgb(document.getElementsByName("bottomColour")[0].value)
     let d = document.getElementById("middleLocation").value
-    let e = colourCount- d + 1
+    let e = colourCount - d + 1
     let rgbList = [
       [],
       [],
@@ -25,7 +25,9 @@ function formChanged() {
       for (let i = b[l], j = 0; i >= c[l], j < e; i -= (b[l] - c[l]) / e, j += 1) rgbList[l].push(i);
     return `#${[rgbList[0][Math.round(n*10)],rgbList[1][Math.round(n*10)],rgbList[2][Math.round(n*10)]].map(n=>Math.round(n).toString(16).padStart(2,0)).join("")}`
   };
-  let colourCount = document.getElementById("colourCount").value *10
+  let colourCount = document.getElementById("colourCount").value * 10
+  document.getElementById("middleInt").innerHTML = document.getElementById("middleLocation").value
+  document.getElementById("colourCountInt").innerHTML = colourCount / 10
   document.getElementById("middleLocation").max = colourCount;
   for (let l = 0; l <= colourCount; l += 1) {
     const para = document.createElement("div");
