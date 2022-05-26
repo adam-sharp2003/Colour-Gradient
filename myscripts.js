@@ -25,7 +25,6 @@ function formChanged() {
       for (let i = b[l], j = 0; i >= c[l], j < e; i -= (b[l] - c[l]) / e, j += 1) rgbList[l].push(i);
     return `#${[rgbList[0][Math.round(n*10)],rgbList[1][Math.round(n*10)],rgbList[2][Math.round(n*10)]].map(n=>Math.round(n).toString(16).padStart(2,0)).join("")}`
   };
-
   let colourCount = document.getElementById("colourCount").value *10
   document.getElementById("middleLocation").max = colourCount;
   for (let l = 0; l <= colourCount; l += 1) {
@@ -33,7 +32,6 @@ function formChanged() {
     para.appendChild(document.createTextNode(l / 10));
     para.setAttribute("id", "colour" + l);
     document.getElementById("colourMap").appendChild(para);
-    document.getElementById("colour" + l).style.cssText = `background-color: ${getColour(l / 10)}; margin: 0; font-size: ${5/(colourCount/100)}px; color: white`;
+    document.getElementById("colour" + l).style.cssText = `background-color: ${getColour(l / 10)}; margin: 0; height: ${5/(colourCount/100)}px; font-size: ${5/(colourCount/100)}px; color: white`;
   }
-
 }
