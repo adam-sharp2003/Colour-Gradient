@@ -22,7 +22,7 @@ Now allows control of all three colours
 
 ## Gallery
 
-![image](https://user-images.githubusercontent.com/79047247/170057392-5d310bba-ef06-4ad1-b797-e677a22231b8.png)
+![image](https://user-images.githubusercontent.com/79047247/170506582-29d9644f-d0a4-4dc2-b566-6e52cf315956.png)
 
 ![image](https://user-images.githubusercontent.com/79047247/169554220-1cf77859-db8a-43d1-983f-cab9c801da25.png)
 
