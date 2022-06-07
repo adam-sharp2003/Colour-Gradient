@@ -26,7 +26,7 @@ function formChanged() {
     return `#${[rgbList[0][Math.round(n*10)],rgbList[1][Math.round(n*10)],rgbList[2][Math.round(n*10)]].map(n=>Math.round(n).toString(16).padStart(2,0)).join("")}`
   };
   let colourCount = document.getElementById("colourCount").value * 10
-  document.getElementById("middleInt").innerHTML = document.getElementById("middleLocation").value
+  document.getElementById("middleInt").innerHTML = document.getElementById("middleLocation").value / 10
   document.getElementById("colourCountInt").innerHTML = colourCount / 10
   document.getElementById("middleLocation").max = colourCount;
   for (let l = 0; l <= colourCount; l += 1) {
