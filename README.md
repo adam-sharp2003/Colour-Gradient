@@ -12,6 +12,10 @@ A client had a system on there website where a table would display numbers from 
 
 This project is a HTML Colour Tester, where the user selects the desired colours and program outputs a gradient of divs using the above system.
 
+## Update 07/06/22
+
+Content should fit on screen fully.
+
 ## Update 24/05/22
 
 You can now adjust position of the middle colour and adjust the max number in the gradient.
