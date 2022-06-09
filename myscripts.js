@@ -1,4 +1,5 @@
 var b = parseInt(document.getElementById("maincolours").value)
+
 function controlsChanged() {
   document.getElementById("controller").innerHTML = '';
   b = parseInt(document.getElementById("maincolours").value)
@@ -19,7 +20,7 @@ function controlsChanged() {
     middle.type = "range";
     middle.min = "0";
     middle.max = "50";
-    middle.setAttribute("value", "25");
+    middle.setAttribute("value", middle.max/(b+1) * l);
     middle.setAttribute("oninput", "formChanged()");
     middle.setAttribute("id", "middleLocation" + l);
     middle.style.cssText = "width:95%; float: left; margin-right: 10px";
@@ -44,7 +45,8 @@ function formChanged() {
     let a = []
     let d = []
     let e = []
-    for (let l = 1; l <= 2 + b; l += 1) a.push(hexToRgb(document.getElementsByName("colour" + l)[0].value))
+    for (let l = 1; l <= 1 + b; l += 1) a.push(hexToRgb(document.getElementsByName("colour" + l)[0].value))
+    a.push(hexToRgb(document.getElementsByName("bottomcolour")[0].value))
     for (let l = 1; l <= b; l += 1) {
       d.push(document.getElementById("middleLocation" + l).value)
       e.push(colourCount - d[l - 1] + 1)
@@ -56,16 +58,18 @@ function formChanged() {
     ];
     for (let k = 1; k <= b; k += 1) {
       for (let l = 0; l < 3; l += 1)
-        for (let i = a[0][l], j = 0; i <= a[1][l], j < d; i += (a[1][l] - a[0][l]) / d, j += 1) rgbList[l].push(i);
+        for (let i = a[2*k-2][l], j = 0; i <= a[2*k-1][l], j < d; i += (a[2*k-1][l] - a[2*k-2][l]) / d, j += 1) rgbList[l].push(i);
       for (let l = 0; l < 3; l += 1)
-        for (let i = a[1][l], j = 0; i >= a[2][l], j < e; i -= (a[1][l] - a[2][l]) / e, j += 1) rgbList[l].push(i);
+        for (let i = a[2*k-1][l], j = 0; i >= a[2*k-0][l], j < e; i -= (a[2*k-1][l] - a[2*k-0][l]) / e, j += 1) rgbList[l].push(i);
     }
     return `#${[rgbList[0][Math.round(n*10)],rgbList[1][Math.round(n*10)],rgbList[2][Math.round(n*10)]].map(n=>Math.round(n).toString(16).padStart(2,0)).join("")}`
   };
-  for (let l = 1; l <= b; l += 1) document.getElementById("middleInt" + l).innerHTML = document.getElementById("middleLocation" + l).value / 10
-  let colourCount = document.getElementById("colourCount").value * 10
+  var colourCount = document.getElementById("colourCount").value * 10
+  for (let l = 1; l <= b; l += 1) {
+    document.getElementById("middleInt" + l).innerHTML = document.getElementById("middleLocation" + l).value / 10
+    document.getElementById("middleLocation" + l).max = colourCount;
+  }
   document.getElementById("colourCountInt").innerHTML = colourCount / 10
-  document.getElementById("middleLocation1").max = colourCount;
   for (let l = 0; l <= colourCount; l += 1) {
     const para = document.createElement("div");
     para.appendChild(document.createTextNode(l / 10));
