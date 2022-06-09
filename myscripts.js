@@ -1,26 +1,33 @@
-var b = 1
-for (let l = 1; l <= b; l += 1) {
-  var header = document.createElement("p");
-  header.style.color = "white";
-  header.appendChild(document.createTextNode("Middle Colour " + l));
-  document.getElementById("main").appendChild(header);
-  var colour = document.createElement("input");
-  colour.type = "color"; colour.name = "colour" + (l+1);
-  colour.setAttribute("onkeyup", "formChanged()");
-  colour.setAttribute("onchange", "formChanged()");
-  colour.setAttribute("value", "#BD0000");
-  colour.style.cssText = "width:100%; border: none; padding: 0; background-color: black";
-  document.getElementById("main").appendChild(colour);
-  var middle = document.createElement("input");
-  middle.type = "range"; middle.min = "0"; middle.max = "50";
-  middle.setAttribute("value", "25");
-  middle.setAttribute("oninput", "formChanged()");
-  middle.setAttribute("id", "middleLocation" + l);
-  middle.style.cssText = "width:95%; float: left; margin-right: 10px";
-  document.getElementById("main").appendChild(middle);
-  var middlenum = document.createElement("p");
-  middlenum.setAttribute("id", "middleInt" + l);
-  document.getElementById("main").appendChild(middlenum);
+var b = parseInt(document.getElementById("maincolours").value)
+function controlsChanged() {
+  document.getElementById("controller").innerHTML = '';
+  b = parseInt(document.getElementById("maincolours").value)
+  for (let l = 1; l <= b; l += 1) {
+    var header = document.createElement("p");
+    header.style.color = "white";
+    header.appendChild(document.createTextNode("Middle Colour " + l));
+    document.getElementById("controller").appendChild(header);
+    var colour = document.createElement("input");
+    colour.type = "color";
+    colour.name = "colour" + (l + 1);
+    colour.setAttribute("onkeyup", "formChanged()");
+    colour.setAttribute("onchange", "formChanged()");
+    colour.setAttribute("value", "#BD0000");
+    colour.style.cssText = "width:100%; border: none; padding: 0; background-color: black";
+    document.getElementById("controller").appendChild(colour);
+    var middle = document.createElement("input");
+    middle.type = "range";
+    middle.min = "0";
+    middle.max = "50";
+    middle.setAttribute("value", "25");
+    middle.setAttribute("oninput", "formChanged()");
+    middle.setAttribute("id", "middleLocation" + l);
+    middle.style.cssText = "width:95%; float: left; margin-right: 10px";
+    document.getElementById("controller").appendChild(middle);
+    var middlenum = document.createElement("p");
+    middlenum.setAttribute("id", "middleInt" + l);
+    document.getElementById("controller").appendChild(middlenum);
+  }
 }
 
 function formChanged() {
@@ -35,9 +42,13 @@ function formChanged() {
       ] : null;
     }
     let a = []
+    let d = []
+    let e = []
     for (let l = 1; l <= 2 + b; l += 1) a.push(hexToRgb(document.getElementsByName("colour" + l)[0].value))
-    let d = document.getElementById("middleLocation1").value
-    let e = colourCount - d + 1
+    for (let l = 1; l <= b; l += 1) {
+      d.push(document.getElementById("middleLocation" + l).value)
+      e.push(colourCount - d[l - 1] + 1)
+    }
     let rgbList = [
       [],
       [],
