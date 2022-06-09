@@ -20,7 +20,7 @@ function controlsChanged() {
     middle.type = "range";
     middle.min = "0";
     middle.max = "50";
-    middle.setAttribute("value", middle.max/(b+1) * l);
+    middle.setAttribute("value", middle.max / (b + 1) * l);
     middle.setAttribute("oninput", "formChanged()");
     middle.setAttribute("id", "middleLocation" + l);
     middle.style.cssText = "width:95%; float: left; margin-right: 10px";
@@ -58,9 +58,9 @@ function formChanged() {
     ];
     for (let k = 1; k <= b; k += 1) {
       for (let l = 0; l < 3; l += 1)
-        for (let i = a[2*k-2][l], j = 0; i <= a[2*k-1][l], j < d; i += (a[2*k-1][l] - a[2*k-2][l]) / d, j += 1) rgbList[l].push(i);
+        for (let i = a[2 * k - 2][l], j = 0; i <= a[2 * k - 1][l], j < d[k-1]; i += (a[2 * k - 1][l] - a[2 * k - 2][l]) / d[k-1], j += 1) rgbList[l].push(i);
       for (let l = 0; l < 3; l += 1)
-        for (let i = a[2*k-1][l], j = 0; i >= a[2*k-0][l], j < e; i -= (a[2*k-1][l] - a[2*k-0][l]) / e, j += 1) rgbList[l].push(i);
+        for (let i = a[2 * k - 1][l], j = 0; i >= a[2 * k - 0][l], j < e[k-1]; i -= (a[2 * k - 1][l] - a[2 * k - 0][l]) / e[k-1], j += 1) rgbList[l].push(i);
     }
     return `#${[rgbList[0][Math.round(n*10)],rgbList[1][Math.round(n*10)],rgbList[2][Math.round(n*10)]].map(n=>Math.round(n).toString(16).padStart(2,0)).join("")}`
   };
