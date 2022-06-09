@@ -9,9 +9,9 @@ function formChanged() {
         parseInt(result[3], 16)
       ] : null;
     }
-    let a = hexToRgb(document.getElementsByName("topColour")[0].value)
-    let b = hexToRgb(document.getElementsByName("middlecolour")[0].value)
-    let c = hexToRgb(document.getElementsByName("bottomColour")[0].value)
+    let a = []
+    let b = 1
+    for (let l = 1; l <= 2 + b; l += 1) a.push(hexToRgb(document.getElementsByName("colour" + l)[0].value))
     let d = document.getElementById("middleLocation").value
     let e = colourCount - d + 1
     let rgbList = [
@@ -19,10 +19,12 @@ function formChanged() {
       [],
       [],
     ];
-    for (let l = 0; l < 3; l += 1)
-      for (let i = a[l], j = 0; i <= b[l], j < d; i += (b[l] - a[l]) / d, j += 1) rgbList[l].push(i);
-    for (let l = 0; l < 3; l += 1)
-      for (let i = b[l], j = 0; i >= c[l], j < e; i -= (b[l] - c[l]) / e, j += 1) rgbList[l].push(i);
+    for (let k = 1; k <= b; k += 1) {
+      for (let l = 0; l < 3; l += 1)
+        for (let i = a[0][l], j = 0; i <= a[1][l], j < d; i += (a[1][l] - a[0][l]) / d, j += 1) rgbList[l].push(i);
+      for (let l = 0; l < 3; l += 1)
+        for (let i = a[1][l], j = 0; i >= a[2][l], j < e; i -= (a[1][l] - a[2][l]) / e, j += 1) rgbList[l].push(i);
+    }
     return `#${[rgbList[0][Math.round(n*10)],rgbList[1][Math.round(n*10)],rgbList[2][Math.round(n*10)]].map(n=>Math.round(n).toString(16).padStart(2,0)).join("")}`
   };
   let colourCount = document.getElementById("colourCount").value * 10
