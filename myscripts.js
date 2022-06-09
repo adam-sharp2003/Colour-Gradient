@@ -1,3 +1,28 @@
+var b = 1
+for (let l = 1; l <= b; l += 1) {
+  var header = document.createElement("p");
+  header.style.color = "white";
+  header.appendChild(document.createTextNode("Middle Colour " + l));
+  document.getElementById("main").appendChild(header);
+  var colour = document.createElement("input");
+  colour.type = "color"; colour.name = "colour" + (l+1);
+  colour.setAttribute("onkeyup", "formChanged()");
+  colour.setAttribute("onchange", "formChanged()");
+  colour.setAttribute("value", "#BD0000");
+  colour.style.cssText = "width:100%; border: none; padding: 0; background-color: black";
+  document.getElementById("main").appendChild(colour);
+  var middle = document.createElement("input");
+  middle.type = "range"; middle.min = "0"; middle.max = "50";
+  middle.setAttribute("value", "25");
+  middle.setAttribute("oninput", "formChanged()");
+  middle.setAttribute("id", "middleLocation" + l);
+  middle.style.cssText = "width:95%; float: left; margin-right: 10px";
+  document.getElementById("main").appendChild(middle);
+  var middlenum = document.createElement("p");
+  middlenum.setAttribute("id", "middleInt" + l);
+  document.getElementById("main").appendChild(middlenum);
+}
+
 function formChanged() {
   document.getElementById("colourMap").innerHTML = '';
   const getColour = (n) => {
@@ -10,9 +35,8 @@ function formChanged() {
       ] : null;
     }
     let a = []
-    let b = 1
     for (let l = 1; l <= 2 + b; l += 1) a.push(hexToRgb(document.getElementsByName("colour" + l)[0].value))
-    let d = document.getElementById("middleLocation").value
+    let d = document.getElementById("middleLocation1").value
     let e = colourCount - d + 1
     let rgbList = [
       [],
@@ -27,10 +51,10 @@ function formChanged() {
     }
     return `#${[rgbList[0][Math.round(n*10)],rgbList[1][Math.round(n*10)],rgbList[2][Math.round(n*10)]].map(n=>Math.round(n).toString(16).padStart(2,0)).join("")}`
   };
+  for (let l = 1; l <= b; l += 1) document.getElementById("middleInt" + l).innerHTML = document.getElementById("middleLocation" + l).value / 10
   let colourCount = document.getElementById("colourCount").value * 10
-  document.getElementById("middleInt").innerHTML = document.getElementById("middleLocation").value / 10
   document.getElementById("colourCountInt").innerHTML = colourCount / 10
-  document.getElementById("middleLocation").max = colourCount;
+  document.getElementById("middleLocation1").max = colourCount;
   for (let l = 0; l <= colourCount; l += 1) {
     const para = document.createElement("div");
     para.appendChild(document.createTextNode(l / 10));
