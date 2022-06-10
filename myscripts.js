@@ -1,33 +1,16 @@
 var b = parseInt(document.getElementById("maincolours").value)
 
 function controlsChanged() {
-  document.getElementById("controller").innerHTML = '';
-  b = parseInt(document.getElementById("maincolours").value)
-  for (let l = 1; l <= b; l += 1) {
-    var header = document.createElement("p");
-    header.style.color = "white";
-    header.appendChild(document.createTextNode("Middle Colour " + l));
-    document.getElementById("controller").appendChild(header);
-    var colour = document.createElement("input");
-    colour.type = "color";
-    colour.name = "colour" + (l + 1);
-    colour.setAttribute("onkeyup", "formChanged()");
-    colour.setAttribute("onchange", "formChanged()");
-    colour.setAttribute("value", "#BD0000");
-    colour.style.cssText = "width:100%; border: none; padding: 0; background-color: black";
-    document.getElementById("controller").appendChild(colour);
-    var middle = document.createElement("input");
-    middle.type = "range";
-    middle.min = "0";
-    middle.max = "50";
-    middle.setAttribute("value", middle.max / (b + 1) * l);
-    middle.setAttribute("oninput", "formChanged()");
-    middle.setAttribute("id", "middleLocation" + l);
-    middle.style.cssText = "width:95%; float: left; margin-right: 10px";
-    document.getElementById("controller").appendChild(middle);
-    var middlenum = document.createElement("p");
-    middlenum.setAttribute("id", "middleInt" + l);
-    document.getElementById("controller").appendChild(middlenum);
+  document.getElementById("controller").innerHTML = "", b = parseInt(document.getElementById("maincolours").value);
+  for (let e = 1; e <= b; e += 1) {
+    var t = document.createElement("p");
+    t.style.color = "white", t.appendChild(document.createTextNode("Middle Colour " + e)), document.getElementById("controller").appendChild(t);
+    t = document.createElement("input");
+    t.type = "color", t.name = "colour" + (e + 1), t.setAttribute("onkeyup", "formChanged()"), t.setAttribute("onchange", "formChanged()"), t.setAttribute("value", `#${Math.floor(Math.random()*16777215).toString(16)}`), t.style.cssText = "width:100%; border: none; padding: 0; background-color: black", document.getElementById("controller").appendChild(t);
+    t = document.createElement("input");
+    t.type = "range", t.min = "0", t.max = "50", t.setAttribute("value", t.max / (b + 1) * e), t.setAttribute("oninput", "formChanged()"), t.setAttribute("id", "middleLocation" + e), t.style.cssText = "width:95%; float: left; margin-right: 10px", document.getElementById("controller").appendChild(t);
+    t = document.createElement("p");
+    t.setAttribute("id", "middleInt" + e), document.getElementById("controller").appendChild(t)
   }
 }
 
@@ -48,20 +31,19 @@ function formChanged() {
     for (let l = 1; l <= 1 + b; l += 1) a.push(hexToRgb(document.getElementsByName("colour" + l)[0].value))
     a.push(hexToRgb(document.getElementsByName("bottomcolour")[0].value))
     for (let l = 1; l <= b; l += 1) {
-      d.push(document.getElementById("middleLocation" + l).value)
-      e.push(colourCount - d[l - 1] + 1)
+      d.push(Math.round(document.getElementById("middleLocation" + l).value / l))
+      e.push(Math.round((colourCount - d[l - 1] / b + 1)))
     }
     let rgbList = [
       [],
       [],
       [],
     ];
-    for (let k = 1; k <= b; k += 1) {
+    for (let k = 0; k < b; k += 1)
       for (let l = 0; l < 3; l += 1)
-        for (let i = a[2 * k - 2][l], j = 0; i <= a[2 * k - 1][l], j < d[k-1]; i += (a[2 * k - 1][l] - a[2 * k - 2][l]) / d[k-1], j += 1) rgbList[l].push(i);
-      for (let l = 0; l < 3; l += 1)
-        for (let i = a[2 * k - 1][l], j = 0; i >= a[2 * k - 0][l], j < e[k-1]; i -= (a[2 * k - 1][l] - a[2 * k - 0][l]) / e[k-1], j += 1) rgbList[l].push(i);
-    }
+        for (let i = a[k][l], j = 0; i <= a[k + 1][l], j < d[k]; i += (a[k + 1][l] - a[k][l]) / d[k], j += 1) rgbList[l].push(i);
+    for (let l = 0; l < 3; l += 1)
+      for (let i = a[b][l], j = 0; i >= a[b + 1][l], j < e[b - 1]; i -= (a[b][l] - a[b + 1][l]) / e[b - 1], j += 1) rgbList[l].push(i);
     return `#${[rgbList[0][Math.round(n*10)],rgbList[1][Math.round(n*10)],rgbList[2][Math.round(n*10)]].map(n=>Math.round(n).toString(16).padStart(2,0)).join("")}`
   };
   var colourCount = document.getElementById("colourCount").value * 10
