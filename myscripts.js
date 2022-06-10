@@ -1,5 +1,3 @@
-var b = parseInt(document.getElementById("maincolours").value)
-
 function controlsChanged() {
   document.getElementById("controller").innerHTML = "", b = parseInt(document.getElementById("maincolours").value);
   for (let d = 1; d <= b; d += 1) {
@@ -46,6 +44,7 @@ function formChanged() {
       for (let i = a[b][l], j = 0; i >= a[b + 1][l], j < d[b - 1]; i -= (a[b][l] - a[b + 1][l]) / d[b - 1], j += 1) rgbList[l].push(i);
     return `#${[rgbList[0][Math.round(n*10)],rgbList[1][Math.round(n*10)],rgbList[2][Math.round(n*10)]].map(n=>Math.round(n).toString(16).padStart(2,0)).join("")}`
   };
+  var b = parseInt(document.getElementById("maincolours").value)
   var colourCount = document.getElementById("colourCount").value * 10
   for (let l = 1; l <= b; l += 1) {
     document.getElementById("middleInt" + l).innerHTML = document.getElementById("middleLocation" + l).value / 10
