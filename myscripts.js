@@ -6,7 +6,8 @@ function controlsChanged() {
     var t = document.createElement("p");
     t.style.color = "white", t.appendChild(document.createTextNode("Middle Colour " + d)), document.getElementById("controller").appendChild(t);
     t = document.createElement("input");
-    t.type = "color", t.name = "colour" + (d + 1), t.setAttribute("onkeyup", "formChanged()"), t.setAttribute("onchange", "formChanged()"), t.setAttribute("value", `#${Math.floor(Math.random()*16777215).toString(16)}`), t.style.cssText = "width:100%; border: none; padding: 0; background-color: black", document.getElementById("controller").appendChild(t);
+    t.type = "color", t.name = "colour" + (d + 1), t.setAttribute("onkeyup", "formChanged()"), t.setAttribute("onchange", "formChanged()"), t.setAttribute("value", document.getElementById("gen").value == 'Random' ? `#${Math.floor(Math.random()*16777215).toString(16)}` : preset[d])
+    t.style.cssText = "width:100%; border: none; padding: 0; background-color: black", document.getElementById("controller").appendChild(t);
     t = document.createElement("input");
     t.type = "range", t.min = "0", t.max = 50, t.setAttribute("value", t.max / (b + 1) * d), t.setAttribute("oninput", "formChanged()"), t.setAttribute("id", "middleLocation" + d), t.style.cssText = "width:100%; float: left; margin-right: 10px", document.getElementById("controller").appendChild(t);
   }
