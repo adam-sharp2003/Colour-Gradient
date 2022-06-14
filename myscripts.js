@@ -13,7 +13,8 @@ window.addEventListener("beforeunload", (e) => {
 });
 
 var presets = [
-  ["#ff9f00", "#37008a", "#b63202", "#b22d02", "#af2802", "#ab2202", "#a81d02", "#a41803", "#a11303", "#9d0d03", "#9a0803", "#960303"]
+  ["#ff9f00", "#37008a", "#b63202", "#b22d02", "#af2802", "#ab2202", "#a81d02", "#a41803", "#a11303", "#9d0d03", "#9a0803", "#960303"],
+  ["#ff0000", "#ee82ee", "#ffa500", "#ffff00", "#008000", "#0000ff", "#4b0082"]
 ]
 
 function presetSave() {
@@ -55,7 +56,6 @@ function formChanged() {
     }
     let a = []
     let c = []
-    let d = []
     for (let l = 1; l <= 1 + b; l += 1) a.push(hexToRgb(document.getElementsByName("colour" + l)[0].value))
     a.push(hexToRgb(document.getElementsByName("bottomcolour")[0].value))
     for (let l = 1; l <= b; l += 1) c.push(Math.floor(document.getElementById("middleLocation" + l).value / l))
