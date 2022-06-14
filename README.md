@@ -13,26 +13,34 @@ A client had a system on there website where a table would display numbers from 
 This project is a HTML Colour Tester, where the user selects the desired colours and program outputs a gradient of divs using the above system.
 
 
-## Update 10/06/22
+## Update v1.2 (14/06/22)
 
-This is a work-in progress build, where the user can have more middle colours. It is almost finished, but still has an issue where the bottom colour is not visible in most scinarios.
+New Features:
 
-## Update 07/06/22
+- You can now add more colours in the middle and move them (semi) freely. It is capped at 10 as is get a bit weird beyond there
+- Presets! You can now save you colour presets so you can easily get back to your old colours.
+  - This only saves the colours, not the positions of them.
+  - If you save a preset with less than 10 middle colours, all new middle colours will be black.
+  - You can name the presets, or leave them to get a default "Custom" name.
+  - If you add more colours in the "Random" preset, it will create new colours. Use with caution.
+  - The website will warn you when leaving/reloading as it does not save outside of the instance.
+
+## Update v1.1.2 (07/06/22)
 
 Content should fit on screen fully.
 
-## Update 24/05/22
+## Update v1.1.1 (24/05/22)
 
 You can now adjust position of the middle colour and adjust the max number in the gradient.
 
-## Update 19/05/22
+## Update v1.1 (19/05/22)
 
 Now allows control of all three colours
 
 ## Gallery
 
-![image](https://user-images.githubusercontent.com/79047247/170518542-cfac30a9-e655-4e9c-9834-867e38bdffac.png)
+![image](https://user-images.githubusercontent.com/79047247/173594206-e08a0bd0-9faa-447a-bf0a-2ac9be3f2b48.png)
 
-<img width="1440" alt="image" src="https://user-images.githubusercontent.com/79047247/173055992-87ed0e5d-7d14-4270-aa1a-60c1bdeddf63.png">
+<img width="1440" alt="image" src="https://user-images.githubusercontent.com/79047247/173593487-526541d6-d806-4719-8a55-344a7c0e786d.png">
 
 
