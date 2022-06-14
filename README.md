@@ -12,6 +12,11 @@ A client had a system on there website where a table would display numbers from 
 
 This project is a HTML Colour Tester, where the user selects the desired colours and program outputs a gradient of divs using the above system.
 
+
+## Update 10/06/22
+
+This is a work-in progress build, where the user can have more middle colours. It is almost finished, but still has an issue where the bottom colour is not visible in most scinarios.
+
 ## Update 07/06/22
 
 Content should fit on screen fully.
@@ -28,6 +33,6 @@ Now allows control of all three colours
 
 ![image](https://user-images.githubusercontent.com/79047247/170518542-cfac30a9-e655-4e9c-9834-867e38bdffac.png)
 
-![image](https://user-images.githubusercontent.com/79047247/170518769-63d24163-0dc5-4a96-a20e-c3d85bbaa219.png)
+<img width="1440" alt="image" src="https://user-images.githubusercontent.com/79047247/173055992-87ed0e5d-7d14-4270-aa1a-60c1bdeddf63.png">
 
 
