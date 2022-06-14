@@ -1,4 +1,28 @@
-var preset = ["#b63202", "#b22d02", "#af2802", "#ab2202", "#a81d02", "#a41803", "#a11303", "#9d0d03", "#9a0803", "#960303"]
+let isDirty = false
+const input = document.querySelector('select')
+input.addEventListener('change', () => {
+  isDirty = true
+})
+
+window.addEventListener("beforeunload", (e) => {
+  if (!isDirty) {
+    return;
+  }
+  e.returnValue = true;
+  return true
+});
+
+var presets = [
+  ["#ff9f00", "#37008a", "#b63202", "#b22d02", "#af2802", "#ab2202", "#a81d02", "#a41803", "#a11303", "#9d0d03", "#9a0803", "#960303"]
+]
+
+function presetSave() {
+  t = document.createElement("option");
+  t.setAttribute("value", presets.length), t.appendChild(document.createTextNode(document.getElementById("pname").value != "" ? document.getElementById("pname").value : `Custom ${presets.length}`)), document.getElementById("gen").appendChild(t);
+  let y = []
+  for (let i = 0; i < document.querySelectorAll('[name*="colour"]').length; i += 1) y.push(document.querySelectorAll('[name*="colour"]')[i].value);
+  presets.push(y)
+}
 
 function controlsChanged() {
   document.getElementById("controller").innerHTML = "", b = parseInt(document.getElementById("maincolours").value);
@@ -6,10 +30,15 @@ function controlsChanged() {
     var t = document.createElement("p");
     t.style.color = "white", t.appendChild(document.createTextNode("Middle Colour " + d)), document.getElementById("controller").appendChild(t);
     t = document.createElement("input");
-    t.type = "color", t.name = "colour" + (d + 1), t.setAttribute("onkeyup", "formChanged()"), t.setAttribute("onchange", "formChanged()"), t.setAttribute("value", document.getElementById("gen").value == 'Random' ? `#${Math.floor(Math.random()*16777215).toString(16)}` : preset[d])
+    t.type = "color", t.name = "colour" + (d + 1), t.setAttribute("onkeyup", "formChanged()"), t.setAttribute("onchange", "formChanged()")
+    t.setAttribute("value", document.getElementById("gen").value == "Random" ? `#${Math.floor(Math.random()*16777215).toString(16)}` : presets[document.getElementById("gen").value][d + 1])
     t.style.cssText = "width:100%; border: none; padding: 0; background-color: black", document.getElementById("controller").appendChild(t);
     t = document.createElement("input");
     t.type = "range", t.min = "0", t.max = 50, t.setAttribute("value", t.max / (b + 1) * d), t.setAttribute("oninput", "formChanged()"), t.setAttribute("id", "middleLocation" + d), t.style.cssText = "width:100%; float: left; margin-right: 10px", document.getElementById("controller").appendChild(t);
+    document.getElementById("top").setAttribute("value", document.getElementById("gen").value == "Random" ? `#${Math.floor(Math.random()*16777215).toString(16)}` : presets[document.getElementById("gen").value][0])
+    document.getElementById("bottom").setAttribute("value", document.getElementById("gen").value == "Random" ? `#${Math.floor(Math.random()*16777215).toString(16)}` : presets[document.getElementById("gen").value][1])
+    console.log(document.getElementById("gen").value);
+    if(document.getElementById("gen").value == "Random") document.getElementById("reload").style.display = "inline"; else document.getElementById("reload").style.display = "none";
   }
 }
 
