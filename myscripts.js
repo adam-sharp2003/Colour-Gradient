@@ -37,7 +37,8 @@ function controlsChanged() {
     t.type = "range", t.min = "0", t.max = 50, t.setAttribute("value", t.max / (b + 1) * d), t.setAttribute("oninput", "formChanged()"), t.setAttribute("id", "middleLocation" + d), t.style.cssText = "width:100%; float: left; margin-right: 10px", document.getElementById("controller").appendChild(t);
     document.getElementById("top").setAttribute("value", document.getElementById("gen").value == "Random" ? `#${Math.floor(Math.random()*16777215).toString(16)}` : presets[document.getElementById("gen").value][0])
     document.getElementById("bottom").setAttribute("value", document.getElementById("gen").value == "Random" ? `#${Math.floor(Math.random()*16777215).toString(16)}` : presets[document.getElementById("gen").value][1])
-    if(document.getElementById("gen").value == "Random") document.getElementById("reload").style.display = "inline"; else document.getElementById("reload").style.display = "none";
+    if (document.getElementById("gen").value == "Random") document.getElementById("reload").style.display = "inline";
+    else document.getElementById("reload").style.display = "none";
   }
 }
 
