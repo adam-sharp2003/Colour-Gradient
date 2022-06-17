@@ -46,7 +46,7 @@ function controlsChanged() {
 
 function formChanged() {
   document.getElementById("colourMap").innerHTML = '';
-  const getColour = (n) => {
+  const getColour = n => {
     function hexToRgb(hex) {
       let result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
       return result ? [
@@ -55,8 +55,8 @@ function formChanged() {
         parseInt(result[3], 16)
       ] : null;
     }
-    let a = []
-    let c = []
+    let a = [],
+      c = []
     for (let l = 1; l <= 1 + b; l += 1) a.push(hexToRgb(document.getElementsByName("colour" + l)[0].value))
     a.push(hexToRgb(document.getElementsByName("bottomcolour")[0].value))
     for (let l = 1; l <= b; l += 1) c.push(Math.floor(document.getElementById("middleLocation" + l).value / l))
@@ -74,8 +74,8 @@ function formChanged() {
     return `#${[rgbList[0][Math.round(n*10)],rgbList[1][Math.round(n*10)],rgbList[2][Math.round(n*10)]].map(n=>Math.round(n).toString(16).padStart(2,0)).join("")}`
   };
 
-  var b = parseInt(document.getElementById("maincolours").value)
-  var colourCount = document.getElementById("colourCount").value * 10
+  var b = parseInt(document.getElementById("maincolours").value),
+    colourCount = 10 * document.getElementById("colourCount").value;
   for (let l = 1; l <= b; l += 1) document.getElementById("middleLocation" + l).max = colourCount;
   document.getElementById("colourCountInt").innerHTML = colourCount / 10
   for (let l = 0; l <= colourCount; l += 1) {
