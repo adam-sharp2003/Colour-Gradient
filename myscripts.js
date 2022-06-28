@@ -5,9 +5,7 @@ input.addEventListener('change', () => {
 })
 
 window.addEventListener("beforeunload", (e) => {
-  if (!isDirty) {
-    return;
-  }
+  if (!isDirty) return;
   e.returnValue = true;
   return true
 });
@@ -37,7 +35,8 @@ function controlsChanged() {
     t.setAttribute("value", "Random" == document.getElementById("gen").value ? `#${Math.floor(16777215*Math.random()).toString(16)}` : presets[document.getElementById("gen").value][d + 1]);
     t.style.cssText = "width:100%; border: none; padding: 0; background-color: black", document.getElementById("controller").appendChild(t);
     t = document.createElement("input");
-    t.type = "range", t.min = "0", t.max = 50, t.setAttribute("value", t.max / (b + 1) * d), t.setAttribute("oninput", "formChanged()"), t.setAttribute("id", "middleLocation" + d), t.style.cssText = "width:100%; float: left; margin-right: 10px", document.getElementById("controller").appendChild(t);
+    t.type = "range", t.min = "0", t.max = 50, t.setAttribute("value", t.max / (b + 1) * d), t.setAttribute("oninput", "formChanged()"), t.setAttribute("id", "middleLocation" + d)
+    t.style.cssText = "width:100%; float: left; margin-right: 10px", document.getElementById("controller").appendChild(t);
     document.getElementById("top").setAttribute("value", "Random" == document.getElementById("gen").value ? `#${Math.floor(16777215*Math.random()).toString(16)}` : presets[document.getElementById("gen").value][0]);
     document.getElementById("bottom").setAttribute("value", "Random" == document.getElementById("gen").value ? `#${Math.floor(16777215*Math.random()).toString(16)}` : presets[document.getElementById("gen").value][1]);
     document.getElementById("reload").style.display = "Random" == document.getElementById("gen").value ? "inline" : "none"
