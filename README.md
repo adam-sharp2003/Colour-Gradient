@@ -25,11 +25,11 @@ New Features:
   - If you add more colours in the "Random" preset, it will create new colours. Use with caution.
   - The website will warn you when leaving/reloading as it does not save outside of the instance.
 
-## Update v1.1.2 (07/06/22)
+### Update v1.1.2 (07/06/22)
 
 Content should fit on screen fully.
 
-## Update v1.1.1 (24/05/22)
+### Update v1.1.1 (24/05/22)
 
 You can now adjust position of the middle colour and adjust the max number in the gradient.
 
@@ -39,7 +39,7 @@ Now allows control of all three colours
 
 ## Gallery
 
-![image](https://user-images.githubusercontent.com/79047247/173594206-e08a0bd0-9faa-447a-bf0a-2ac9be3f2b48.png)
+![image](https://user-images.githubusercontent.com/79047247/176223113-610cef25-96d4-4171-a383-e04917fb1906.png)
 
 <img width="1440" alt="image" src="https://user-images.githubusercontent.com/79047247/173593487-526541d6-d806-4719-8a55-344a7c0e786d.png">
 
