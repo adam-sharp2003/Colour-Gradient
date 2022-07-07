@@ -26,7 +26,7 @@ function presetSave() {
 }
 
 function controlsChanged() {
-  document.getElementById("controller").innerHTML = "", b = parseInt(document.getElementById("maincolours").value);
+  document.getElementById("controller").innerHTML = "", b = parseInt(document.getElementById("mainColours").value);
   for (let d = 1; d <= b; d += 1) {
     var t = document.createElement("p");
     t.style.color = "white", t.appendChild(document.createTextNode("Middle Colour " + d)), document.getElementById("controller").appendChild(t);
@@ -57,7 +57,7 @@ function formChanged() {
     let a = [],
       c = []
     for (let l = 1; l <= 1 + b; l += 1) a.push(hexToRgb(document.getElementsByName("colour" + l)[0].value))
-    a.push(hexToRgb(document.getElementsByName("bottomcolour")[0].value))
+    a.push(hexToRgb(document.getElementsByName("bottomColour")[0].value))
     for (let l = 1; l <= b; l += 1) c.push(Math.floor(document.getElementById("middleLocation" + l).value / l))
     let rgbList = [
       [],
@@ -73,7 +73,7 @@ function formChanged() {
     return `#${[rgbList[0][Math.round(n*10)],rgbList[1][Math.round(n*10)],rgbList[2][Math.round(n*10)]].map(n=>Math.round(n).toString(16).padStart(2,0)).join("")}`
   };
 
-  var b = parseInt(document.getElementById("maincolours").value),
+  var b = parseInt(document.getElementById("mainColours").value),
     colourCount = 10 * document.getElementById("colourCount").value;
   for (let l = 1; l <= b; l += 1) document.getElementById("middleLocation" + l).max = colourCount;
   document.getElementById("colourCountInt").innerHTML = colourCount / 10

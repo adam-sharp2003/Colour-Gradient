@@ -34,7 +34,7 @@
   <div id="main">
     <input type="color" id="top" name="colour1" onkeyup="formChanged()" onchange="formChanged()" value="#FF9F00" style="width:100%; border: none; padding: 0; background-color: black" />
     <div id="colourMap"></div>
-    <input type="color" id="bottom" name="bottomcolour" onkeyup="formChanged()" onchange="formChanged()" value="#37008a" style="width:100%; border: none; padding: 0; background-color: black" />
+    <input type="color" id="bottom" name="bottomColour" onkeyup="formChanged()" onchange="formChanged()" value="#37008a" style="width:100%; border: none; padding: 0; background-color: black" />
     <p>Max Number</p>
     <input type="range" min="1" max="50" value="5" oninput="formChanged(); controlsChanged()" id="colourCount" style="width:95%; float: left; margin-right: 10px">
     <p id="colourCountInt"></p>
@@ -44,7 +44,7 @@
       <option value="Random">Random</option>
     </select><button id="reload" onclick="controlsChanged(); formChanged();" style="filter: invert(1);display: inline">⟳</button>
     <p>Amount of Middle Colours</p>
-    <input type="range" min=1 max=9 value=1 oninput="controlsChanged(); formChanged()" id="maincolours" style="width:100%; float: left; margin-right: 10px">
+    <input type="range" min=1 max=9 value=1 oninput="controlsChanged(); formChanged()" id="mainColours" style="width:100%; float: left; margin-right: 10px">
     <div style="float: right">
       <label>Preset name:</label>
       <input type="text" id="pname" value="">
