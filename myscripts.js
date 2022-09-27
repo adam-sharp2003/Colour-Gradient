@@ -26,7 +26,8 @@ function presetSave() {
 }
 
 function controlsChanged() {
-  document.getElementById("controller").innerHTML = "", b = parseInt(document.getElementById("mainColours").value);
+  document.getElementById("controller").innerHTML = ""; 
+  var b = parseInt(document.getElementById("mainColours").value);
   for (let d = 1; d <= b; d += 1) {
     var t = document.createElement("p");
     t.style.color = "white", t.appendChild(document.createTextNode("Middle Colour " + d)), document.getElementById("controller").appendChild(t);

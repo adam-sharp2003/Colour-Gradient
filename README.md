@@ -35,7 +35,7 @@ You can now adjust position of the middle colour and adjust the max number in th
 
 ## Update v1.1 (19/05/22)
 
-Now allows control of all three colours
+Now allows control of all three colours.
 
 ## Gallery
 
