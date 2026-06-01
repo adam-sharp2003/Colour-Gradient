@@ -2,65 +2,86 @@
 <html>
 
 <head>
-  <title>Colour Gradient</title>
-  <link href=favicon.png rel=icon>
-  <script src="https://kit.fontawesome.com/45c0da0142.js" crossorigin="anonymous"></script>
+	<title>Colour Gradient</title>
+	<link href=favicon.png rel=icon>
+	<script src="https://kit.fontawesome.com/45c0da0142.js"
+		crossorigin="anonymous"></script>
 
 </head>
-<a href=https://github.com/adam-sharp2003/Colour-Gradient target"_blank">
-  <div style="height:50px;width:135px;background-color:#252526;position:fixed;right:-85px;bottom:70px;border-radius:5px 0 0 5px;z-index:2;transition:1s;animation:moveLeft 1.5s ease backwards" class=github>
-    <i class="fa-brands fa-github fa-beat" style=color:white;margin:10px;font-size:30px;--fa-animation-duration:5s;--fa-beat-scale:1.05></i>
-    <span style=color:white;vertical-align:5px;padding-left:5px;font-weight:bold;font-family:Arial,sans-serif>GitHub</span>
-    <style>
-      @keyframes moveLeft {
-        from {
-          right: -135px
-        }
+<a href=https://github.com/adam-sharp2003/Colour-Gradient
+	target="_blank">
+	<div style="height:50px;width:135px;background-color:#252526;position:fixed;right:-85px;bottom:70px;border-radius:5px 0 0 5px;z-index:2;transition:1s;animation:moveLeft 1.5s ease backwards"
+		class=github>
+		<i class="fa-brands fa-github fa-beat"
+			style=color:white;margin:10px;font-size:30px;--fa-animation-duration:5s;--fa-beat-scale:1.05></i>
+		<span
+			style=color:white;vertical-align:5px;padding-left:5px;font-weight:bold;font-family:Arial,sans-serif>GitHub</span>
+		<style>
+			@keyframes moveLeft {
+				from {
+					right: -135px
+				}
 
-        to {
-          right: -85px
-        }
-      }
+				to {
+					right: -85px
+				}
+			}
 
-      div.github:hover {
-        right: 0 !important
-      }
-    </style>
-  </div>
+			div.github:hover {
+				right: 0 !important
+			}
+		</style>
+	</div>
 </a>
 
-<body onload="controlsChanged(); formChanged();" style="background-color: black; padding: 0 ">
+<body onload="controlsChanged(); formChanged();"
+	style="background-color: black; padding: 0 ">
 
-  <div id="main">
-    <input type="color" id="top" name="colour1" onkeyup="formChanged()" onchange="formChanged()" value="#FF9F00" style="width:100%; border: none; padding: 0; background-color: black" />
-    <div id="colourMap"></div>
-    <input type="color" id="bottom" name="bottomColour" onkeyup="formChanged()" onchange="formChanged()" value="#37008a" style="width:100%; border: none; padding: 0; background-color: black" />
-    <p>Max Number</p>
-    <input type="range" min="1" max="50" value="5" oninput="formChanged(); controlsChanged()" id="colourCount" style="width:95%; float: left; margin-right: 10px">
-    <p id="colourCountInt"></p>
-    <select id="gen" onchange="controlsChanged(); formChanged();" style="filter: invert(1)">
-      <option value="0">Preset</option>
-      <option value="1">Rainbow</option>
-      <option value="Random">Random</option>
-    </select><button id="reload" onclick="controlsChanged(); formChanged();" style="filter: invert(1);display: inline">⟳</button>
-    <p>Amount of Middle Colours</p>
-    <input type="range" min=1 max=9 value=1 oninput="controlsChanged(); formChanged()" id="mainColours" style="width:100%; float: left; margin-right: 10px">
-    <div style="float: right">
-      <label>Preset name:</label>
-      <input type="text" id="pname" value="">
-      <input type="submit" onclick="presetSave()" value="Save">
-    </div>
-    <div id="controller"></div>
-  </div>
+	<div id="main">
+		<input type="color" id="top" name="colour1"
+			onkeyup="formChanged()" onchange="formChanged()"
+			value="#FF9F00"
+			style="width:100%; border: none; padding: 0; background-color: black" />
+		<div id="colourMap"></div>
+		<input type="color" id="bottom" name="bottomColour"
+			onkeyup="formChanged()" onchange="formChanged()"
+			value="#37008a"
+			style="width:100%; border: none; padding: 0; background-color: black" />
+		<p>Max Number</p>
+		<input type="range" min="1" max="50" value="5"
+			oninput="formChanged(); controlsChanged()"
+			id="colourCount"
+			style="width:95%; float: left; margin-right: 10px">
+		<p id="colourCountInt"></p>
+		<select id="gen" onchange="controlsChanged(); formChanged();"
+			style="filter: invert(1)">
+			<option value="0">Preset</option>
+			<option value="1">Rainbow</option>
+			<option value="Random">Random</option>
+		</select><button id="reload"
+			onclick="controlsChanged(); formChanged();"
+			style="filter: invert(1);display: inline">⟳</button>
+		<p>Amount of Middle Colours</p>
+		<input type="range" min=1 max=9 value=1
+			oninput="controlsChanged(); formChanged()"
+			id="mainColours"
+			style="width:100%; float: left; margin-right: 10px">
+		<div style="float: right">
+			<label>Preset name:</label>
+			<input type="text" id="pname" value="">
+			<input type="submit" onclick="presetSave()" value="Save">
+		</div>
+		<div id="controller"></div>
+	</div>
 </body>
 
 <style>
-  p,
-  label {
-    color: white;
-    margin: 7px 0;
-    font-family: Arial, sans-serif;
-  }
+	p,
+	label {
+		color: white;
+		margin: 7px 0;
+		font-family: Arial, sans-serif;
+	}
 </style>
 <script src="myscripts.js"></script>
 
